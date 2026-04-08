@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  font-family: var(--font-body);
+  background: #0d0f14;
+  color: #e2e8f0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body { min-height: 100vh; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #12151c; }
+::-webkit-scrollbar-thumb { background: #2a3040; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3a4458; }
+
+/* Shimmer skeleton */
+.skeleton {
+  background: linear-gradient(90deg, #181c25 25%, #1e2330 50%, #181c25 75%);
+  background-size: 700px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Number font */
+.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+/* Up/Down */
+.text-up { color: #10b981; }
+.text-down { color: #ef4444; }
+.bg-up { background-color: #022c22; color: #10b981; }
+.bg-down { background-color: #2d0a0a; color: #ef4444; }
+.bg-neutral { background-color: #1e2330; color: #94a3b8; }
+
+/* Card */
+.card {
+  background: #12151c;
+  border: 1px solid #2a3040;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.03);
+}
+.card-hover {
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+.card-hover:hover {
+  border-color: #3a4458;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+/* Tabs */
+.tab-active {
+  background: #12151c;
+  border-bottom: 2px solid #3b82f6;
+  color: #f1f5f9;
+}
+.tab-inactive {
+  color: #64748b;
+  border-bottom: 2px solid transparent;
+}
+.tab-inactive:hover { color: #94a3b8; }
+
+@keyframes shimmer {
+  0% { background-position: -700px 0; }
+  100% { background-position: 700px 0; }
+}
